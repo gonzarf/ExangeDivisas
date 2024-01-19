@@ -1,6 +1,7 @@
 package com.example.divisas;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +37,7 @@ public class DivisasRVAdapter extends RecyclerView.Adapter<DivisasRVAdapter.MyVi
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                holder.itemView.setBackgroundColor(8);
+                holder.itemView.setBackgroundColor(Color.WHITE);
             }
         });
 
