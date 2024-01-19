@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent_white">#7CFFFFFF</color>
+    <color name="fondo_tarjetas">#a8dadc</color>
+    <color name="fondo">#1d3557</color>
+    <color name="switch_activo">#778da9</color>
+</resources>
