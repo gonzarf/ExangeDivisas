@@ -6,6 +6,7 @@ public class DivisasModel {
 
     public String divisaAbrev;
     public String divisaValor;
+    public boolean clicked;
 
     public DivisasModel(String divisaAbrev, String divisaValor) {
 
@@ -21,5 +22,12 @@ public class DivisasModel {
         return divisaValor;
     }
 
+    public boolean getClicked() {
+        return clicked;
+    }
+
+    public void setClicked(boolean clicked) {
+        this.clicked = clicked;
+    }
 }
 

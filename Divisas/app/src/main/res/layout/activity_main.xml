@@ -7,24 +7,58 @@
     android:background="@color/fondo"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="AgileCoins"
+        android:letterSpacing="0.5"
+        android:textAllCaps="true"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerDivisas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titulo"
+        app:layout_constraintBottom_toTopOf="@id/switchVip"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etAmount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:hint=" CANTIDAD A CAMBIAR"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:hint="EUROS"
         android:textColorHint="@color/transparent_white"
         app:boxCornerRadiusBottomEnd="20dp"
         app:boxCornerRadiusBottomStart="20dp"
         app:boxCornerRadiusTopEnd="20dp"
         app:boxCornerRadiusTopStart="20dp"
-        app:boxStrokeColor="@color/white"
+        app:boxStrokeColor="@color/black"
         app:boxStrokeErrorColor="@color/white"
         app:boxStrokeWidth="2dp"
+        app:counterOverflowTextColor="@color/white"
+        app:counterTextColor="@color/white"
         app:helperTextTextColor="@color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:hintTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/exchangeButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:placeholderTextColor="@color/white"
+        app:prefixTextColor="@color/white"
+        app:suffixTextColor="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/outlined_edit_text"
@@ -36,19 +70,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerDivisas"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/switchVip"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etAmount"
-        app:layout_constraintVertical_bias="0.0" />
-
     <Switch
         android:id="@+id/switchVip"
         android:layout_width="wrap_content"
@@ -57,22 +78,60 @@
         android:textColor="@color/white"
         android:thumbTint="@color/white"
         android:trackTint="@color/fondo_tarjetas"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@id/exchangeButton"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/etAmount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <ImageView
         android:id="@+id/exchangeButton"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="REALIZAR CAMBIO"
-        android:textColor="@color/black"
-        android:backgroundTint="@color/fondo_tarjetas"
         android:layout_marginBottom="20dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/baseline_currency_exchange_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvResultado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="false"
+        android:contextClickable="false"
+        android:textColorHint="@color/white"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeColor="@color/white"
+        app:boxStrokeErrorColor="@color/white"
+        app:boxStrokeWidth="2dp"
+        app:counterOverflowTextColor="@color/white"
+        app:counterTextColor="@color/white"
+        app:errorTextColor="@color/white"
+        app:helperTextTextColor="@color/white"
+        app:hintTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/exchangeButton"
+        app:placeholderTextColor="@color/white"
+        app:prefixTextColor="@color/white"
+        app:suffixTextColor="@color/white">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:contextClickable="false"
+            android:linksClickable="false"
+            android:longClickable="false"
+            android:textColor="@color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
